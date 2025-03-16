@@ -1,0 +1,353 @@
+/* Estilos para el header */
+.header {
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    width: 80%;  /* Ajusta el ancho, si quieres más grande usa 90% */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Para centrar el header */
+    z-index: 1000; /* Para mantenerlo encima */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    
+}
+
+/* Ajustes de la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* Estilos para los enlaces */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbar .left li {
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.navbar .right li {
+    cursor: pointer;
+}
+
+.navbar .right li:hover {
+    color: #00ff00; /* Verde fluorescente */
+    text-shadow: 0px 0px 10px #00ff00;
+}
+
+.navbar .left li:hover {
+    color: #ffff00; /* Amarillo fluorescente */
+    text-shadow: 0px 0px 10px #ffff00;
+}
+
+/* Estilos para los enlaces */
+.navbar .right li a {
+    color: white; /* Color inicial del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s, transform 0.3s; /* Añadimos transición para la transformación */
+}
+
+.navbar .right li a:hover {
+    color: #00ff00; /* Verde fluorescente */
+    text-shadow: 0px 0px 10px #00ff00;
+    transform: translateY(-3px); /* Levanta el enlace 3px hacia arriba */
+}
+
+.navbar .left li a {
+    color: white; /* Color inicial del texto */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s, transform 0.3s; /* Añadimos transición para la transformación */
+}
+
+.navbar .left li a:hover {
+    color: #ffff00; /* Amarillo fluorescente */
+    text-shadow: 0px 0px 10px #ffff00;
+    transform: translateY(-3px); /* Levanta el enlace 3px hacia arriba */
+}
+
+.logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow {
+    margin-left: 5px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    display: none;
+    border-radius: 5px;
+}
+
+.logo-container:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Estilos para el cuerpo y el fondo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Cambiado de 3 a 0 */
+    padding: 50px; /* Eliminado el padding de 50px */
+    box-sizing: border-box;
+    background-image: url('imgs/fondos.jpg'); /* Cambia esto por la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Hace que el fondo no se desplace con el scroll */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px; /* Ajusta según la altura del header */
+}
+
+.background {
+    background-color: #f4f4f4;
+    padding: 90px;
+}
+
+/* El contenido principal se expande y empuja el footer hacia abajo */
+.main-content {
+    flex: 1; /* Esto empuja el footer hacia abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    margin-top: 300px; /* Ajusta esta línea para cambiar la distancia */
+    min-height: auto;
+    padding-top: 50px; /* Asegura espacio entre header y swiper */
+    height: 100vh;
+}
+
+/* Contenedor de las cartas */
+.character-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff; /* Fondo blanco */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 0px; /* Reducimos el padding para evitar tanto espacio */
+    width: 200px; /* Ajustamos el tamaño */
+    max-width: 200px; /* Ajustamos el tamaño máximo */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 5px; /* Reducimos el margen para reducir el espacio entre cartas */
+}
+
+/* Estilos para las cartas de personajes */
+.character-card {
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden;
+    background-color: rgb(53, 132, 62); /* Cambia a blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto de elevación */
+    text-align: left; /* Centrar el contenido */
+    transition: transform 0.3s ease-in-out; /* Efecto al pasar el mouse */
+    margin: 5px; /* Reducimos el margen para reducir el espacio entre cartas */
+}
+
+.character-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.character-card img {
+    width: 100%; /* Ajustar al tamaño del contenedor */
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen mantenga sus proporciones */
+}
+
+.character-card .character-name {
+    background: #18334d; /* Verde Rick y Morty */
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 0 0 15px 15px; /* Bordes solo abajo */
+}
+
+.character-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Estilos para la información de los personajes */
+.character-info {
+    position: flex;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(37, 8, 8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+}
+
+.character-info h2 {
+    margin-top: 0;
+}
+
+/* Estilos para el swiper */
+.swiper-container {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    height: auto;
+    margin: 0 auto 50px auto; /* Centra horizontalmente y agrega margen inferior */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; /* Centra verticalmente */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px; /* Reducimos el padding para evitar tanto espacio */
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    width: auto; /* Asegura que las cartas no se estiren */
+    max-width: 220px; /* Ajusta el tamaño máximo */
+}
+
+/* Estilos para el footer */
+footer {
+    background-image: url('imagensitas/fondos.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    height: 25%;
+    position: fixed; /* Fija el footer */
+    bottom: 0; /* Lo mantiene en la parte inferior */
+    left: 0;
+    z-index: 1000; /* Para asegurarte de que no se superponga con otros elementos */
+}
+
+/* Contenido del footer centrado */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content p {
+    margin: 1px 0;
+}
+
+.social-media {
+    margin: 10px 0;
+}
+
+.social-media a {
+    color: #00ff00; /* Verde fluorescente */
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-media a:hover {
+    color: #ffff00; /* Amarillo fluorescente al pasar el mouse */
+    text-shadow: 0px 0px 10px #ffff00;
+}
+
+.contact-info {
+    margin: 20px 0;
+}
+
+/* Estilos adicionales */
+#charactersContainer {
+    display: flex;
+}
+
+.desktop {
+    text-align: center;
+    margin: 110px 0;
+}
+
+.desktop img {
+    max-width: 10%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+ul li {
+    display: inline;
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(238, 244, 237); /* Cambia esto al color que desees */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+ul li a:hover {
+    color: white; /* Cambia esto al color que desees */
+}
+
+
+

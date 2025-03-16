@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles del Personaje</title>
+  <script defer src="capitulos.js"></script>
+  <style>
+    /* Estilos generales */
+    body {
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .character-info {
+      background-color: white;
+      color: rgb(6, 20, 9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    /* Imagen */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .image-container img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    /* Información */
+    .info {
+      text-align: left;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* Select de episodios */
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #e0e0e0;
+    }
+
+    /* Botón */
+    .back-button {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: white;
+      background: #333;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: rgb(25, 230, 241);
+      color: rgb(3, 25, 28);
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 50px; /* Hace el botón cilíndrico */
+      box-shadow: 0 0 10px #00ff00; /* Efecto de brillo neón */
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Aumenta el brillo al pasar el cursor */
+      transform: scale(1.05); /* Hace un pequeño zoom */
+    }
+
+    /* Estilos para la información del episodio */
+    #info-episodio {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff00;
+      text-align: left;
+      width: 80%;
+      max-width: 400px;
+      display: none; /* Se oculta hasta que se seleccione un episodio */
+      border: 2px solid #00ff00; /* Borde verde */
+      font-family: 'Courier New', Courier, monospace; /* Fuente tipo DNI */
+    }
+
+    .episodio-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .episodio-info h3 {
+      margin: 0;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .episodio-info p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img id="character-image" src="" alt="Character Image">
+    </div>
+    
+    <div class="info">
+      <p><strong>Nombre:</strong> <span id="character-name"></span></p>
+      <p><strong>Estado:</strong> <span id="character-status"></span></p>
+      <p><strong>Especie:</strong> <span id="character-species"></span></p>
+      <p><strong>Origen:</strong> <span id="character-origin"></span></p>
+      <p><strong>Ubicación:</strong> <span id="character-location"></span></p>
+      <p><strong>Episodio que aparece:</strong></p>
+      <select id="episodes">
+        <option value="">Cargando episodios...</option>
+      </select>
+    </div>
+    <a href="index.html" class="back-button">Volver al inicio</a>
+
+    <!-- Contenedor para mostrar la información del episodio -->
+    <div id="info-episodio"></div>
+  </div>
+</body>
+</html>
